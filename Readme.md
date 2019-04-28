@@ -28,7 +28,7 @@ chrome.exe --allow-file-access-from-files --user-data-dir="D:\GethTest\CharmData
 
 其中项目下的各个文件夹说明如下:       
  
-![](./image/dir1.png )   
+![](./image/dir1.PNG )   
 
 应用中主要用到的是blockdata问价夹和src文件夹   
     
@@ -36,7 +36,7 @@ chrome.exe --allow-file-access-from-files --user-data-dir="D:\GethTest\CharmData
 * cintracts 中存放了Solidity编写的智能合约，ShareApp.sol.   
 * src主要存放项目源文件，src中文件说明如下:   
 
-![](./image/dir.png )    
+![](./image/dir.PNG )    
  
 * contracts 中shareapp.json中存放了编译好后智能合约的ABI和部署后的合约地址   
 * JS中的app.js是整个项目的JS代码，整个项目的执行逻辑都在其中   
