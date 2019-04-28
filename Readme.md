@@ -68,11 +68,11 @@ chrome.exe --allow-file-access-from-files --user-data-dir="D:\GethTest\CharmData
 
 首先选择创建物品    
 
-![](./image/3.PNG )    
+![](./image/3.png )    
 
 利用已有的账号`0xf71a914d2d108506ab4c66441964a894650b0c5b`，创建一个新的物品,图片需要将图片放置src\images下:   
 
-![](./image/4.PNG )
+![](./image/4.png )
 
 创建后提示创建成功后说明创建成功，返回查看，   
 
@@ -106,9 +106,9 @@ chrome.exe --allow-file-access-from-files --user-data-dir="D:\GethTest\CharmData
 
 再次查看物品，已经归还成功，可以再次租用：   
 
-![](./image/122.png )   
+![](./image/122.PNG )   
 
-![](./image/12.png )       
+![](./image/12.PNG )       
    
 
 ***
