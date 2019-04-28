@@ -23,12 +23,12 @@ chrome.exe --allow-file-access-from-files --user-data-dir="D:\GethTest\CharmData
 ``` 
 为了方便，可以为谷歌浏览器新建一个关闭同源策略启动的快捷方式，同时新建一个数据文件，区别于正常使用的goole charm。在新建的快捷方式的目标中加入上面参数即可。     
 
-![](image\google.png "google")         
+![](./image/google.png "google")         
 
 
 其中项目下的各个文件夹说明如下:       
  
-![](image\目录说明1.png )   
+![](./image/目录说明1.png )   
 
 应用中主要用到的是blockdata问价夹和src文件夹   
     
@@ -36,7 +36,7 @@ chrome.exe --allow-file-access-from-files --user-data-dir="D:\GethTest\CharmData
 * cintracts 中存放了Solidity编写的智能合约，ShareApp.sol.   
 * src主要存放项目源文件，src中文件说明如下:   
 
-![](image\目录说明.png )    
+![](./image/目录说明.png )    
  
 * contracts 中shareapp.json中存放了编译好后智能合约的ABI和部署后的合约地址   
 * JS中的app.js是整个项目的JS代码，整个项目的执行逻辑都在其中   
@@ -50,65 +50,65 @@ chrome.exe --allow-file-access-from-files --user-data-dir="D:\GethTest\CharmData
 如果变更 重新编译部署了合约，你需要改变的是：      
 1、  在remix-IDE中成功编译后，复制ABI粘贴到src\contracts\sharwApp.json中对应的abi 后面，   
 
-![](image\ABI.PNG )   
+![](./image/ABI.PNG )   
 
 2、 部署合约后，将合约地址复制粘贴到src\contracts\sharwApp.json中对应的address 后面：   
 
-![](image\addr.PNG )
+![](./image/addr.PNG )
 
 ## 使用测试   
 
 如果合约未变更，并且使用blockdata目录正确启动了geth后，直接用关闭同源策略的浏览器打开main.html后，就可以访问程序了：   
 
-![](image\1.png )   
+![](./image/1.png )   
   
 鼠标移动到物品上后会显示租用查看详情的按钮，底部可以选择创建新的物品:   
 
-![](image\2.PNG )   
+![](./image/2.PNG )   
 
 首先选择创建物品    
 
-![](image\3.PNG )    
+![](./image/3.PNG )    
 
 利用已有的账号`0xf71a914d2d108506ab4c66441964a894650b0c5b`，创建一个新的物品,图片需要将图片放置src\images下:   
 
-![](image\4.PNG )
+![](./image/4.PNG )
 
 创建后提示创建成功后说明创建成功，返回查看，   
 
-![](image\5.png )   
+![](./image/5.png )   
 
 查看商品详情:   
 
-![](image\6.png )   
+![](./image/6.png )   
 
 使用账号`0x90d1155bf6b315f3abc7f01e149e3ed7d1bee421`进行租用，在此之前代开getMoney.htmL 先查看一下该账户的余额:    
 
-![](image\7.png )    
+![](./image/7.png )    
 
 然后租用,会提示输入账号和密码，租用后提示租用成功说明租用已经成功：   
 
-![](image\8.png )    
+![](./image/8.png )    
 
 返回查看物品，已经租用成功，不可租用：    
 
-![](image\99.PNG )    
+![](./image/99.PNG )    
 
 
-![](image\9.PNG )     
+![](./image/9.PNG )     
 
 查看账户余额，发生了变化    
 
-![](image\10.png )
+![](./image/10.png )
 
 接着归还物品，会提示输入密码，确认是租用者，提示归还成功后，说明归还成功   
-![](image\11.png )   
+![](./image/11.png )   
 
 再次查看物品，已经归还成功，可以再次租用：   
 
-![](image\122.png )   
+![](./image/122.png )   
 
-![](image\12.png )       
+![](./image/12.png )       
    
 
 ***
