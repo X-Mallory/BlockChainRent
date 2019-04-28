@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>back</title>
+    <meta charset="utf-8">
+    <meta name="Author" >
+  <!--   <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+  <link href="./css/share.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+  <link rel="stylesheet" href="./css/message.css">
+  <link rel="stylesheet" href="./css/jumpmain.css" />
+
+
+ 
+</head>
+<body>
+
+    <h1 align="center" style="margin-top:30px;color:#686868" >区块链物品共享租用系统 </h1>
+<div class="wrap" style="height: 740px;">
+
+    <div class="left">
+        <a href="#">
+            <img src="images/timg_rent.jpg" alt="">
+        </a>
+    </div>
+    <div class="right">
+       <h2 align="center" style="margin-top:30px;color:#686868" >确认归还</h2>
+
+       <div  style="margin-top:10px;color:#686868;font-size:24px;">
+              <a style="display: block; width: 180px; height: 160px; margin: 0 auto; padding-top: 20px;" href="#" >
+                <img id="image" style=" width: 100%; height: 100%; display: block;" src="images/timg.jpg" alt="">
+              </a>
+       </div>
+
+        <div  style="margin-top:20px; margin-left:35%;color:#686868;font-size:18px;">
+        <p style="display:inline;">商品名称：&nbsp&nbsp&nbsp</p>
+         <label id = "name" >Male</label>
+       </div>
+       
+
+       <div  style="margin-top:20px; margin-left:35%;color:#686868;font-size:18px;">
+        <p style="display:inline;">押金（/日租金）：&nbsp&nbsp&nbsp</p>
+         <label id = "money" >Male</label>
+       </div>
+       
+       <div  style="margin-top:20px; margin-left:35%;color:#686868;font-size:18px;">
+        <p style="display:inline;">物品主人：&nbsp&nbsp&nbsp</p>
+         <label id = "creator" >Male</label>
+       </div>
+
+       <div  style="margin-top:20px; margin-left:35%;color:#686868;font-size:18px;">
+        <p style="display:inline;">租用人：&nbsp&nbsp&nbsp</p>
+         <label id = "renter" >Male</label>
+       </div>
+
+       <div  style="margin-top:20px; margin-left:35%;color:#686868;font-size:18px;">
+        <p style="display:inline;">租用开始日期：&nbsp&nbsp&nbsp</p>
+         <label id = "date_start" >Male</label>
+       </div>
+
+       <div  style="margin-top:20px; margin-left:35%;color:#686868;font-size:18px;">
+        <p style="display:inline;">当前租用费用：&nbsp&nbsp&nbsp</p>
+         <label id = "rent_money" >Male</label>
+       </div>
+       
+
+       <div align="center">
+               <span class="input input--haruki"  >
+                    <input class="input__field input__field--haruki" type="password" id="pass" />
+                    <label class="input__label input__label--haruki" for="input-1">
+                        <span class="input__label-content input__label-content--haruki">输入账户密码:</span>
+                    </label>
+                </span>
+        </div>
+
+        <div align="center" style="margin-top:20px; color:#686868;font-size:16px;">
+        <p style="">注意：归还物品会返回扣除 租用金额 后剩余的押金（此外，归还操作还会消耗少量的手续费）</p>
+        <p style="d">租用费用 = 租用时间 * 租金单价</p>
+     
+        </div>
+
+       <div align="center"  class="comments"  style="margin-top:15px;">
+                    <a href="#" onclick="App.Confirm_Back(this)" class="myButton">确认归还</a>
+                    <a href="main.html" class="myButton">取消</a>
+       </div>
+
+
+    </div>
+    
+   
+</div>
+
+<div>
+<p align="center" style="color:#4F9D9D;margin-bottom: 20px ">Copyright ©2019 by Suguoyu. All Rights Reserved</p>
+
+</div>
+
+</body>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+
+<script  src="js/jquery-1.8.2.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/message.js"></script>
+
+<script language="javascript" type="text/javascript" >
+window.onload=function(){
+
+  App.backstart();
+
+  (function() {
+                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
+
+                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
+
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
+
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+  
+};
+
+
+
+
+</script>
+</html>

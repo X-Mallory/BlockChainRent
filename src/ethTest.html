@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>gethTest</title>
+    <meta charset="utf-8">
+    <meta name="Author" >
+  <!--   <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+  
+
+</head>
+<body>
+
+    <h1 align="center" style="margin-top:30px;color:#686868" >这是一个geth命令调试测试，打开F12查看测试结果 </h1>
+              
+</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+<script src="js/app.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/message.js"></script>
+
+<script language="javascript" type="text/javascript" >
+
+  
+ 
+(function() {
+
+
+  // Is there an injected web3 instance?
+    if (typeof web3 !== 'undefined') {
+      App.web3Provider = web3.currentProvider;
+    } else {
+      // If no injected web3 instance is detected, fall back to Ganache
+      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+    }
+    web3 = new Web3(App.web3Provider);
+     //先使用第一个默认账户
+    web3.eth.defaultAccount = web3.eth.accounts[0];
+    console.log("gasPrice(wei):",web3.eth.gasPrice.toString());
+    App.defaultAccount =  web3.eth.defaultAccount;
+
+var defoultAccount = "0x0fcdc14dea2e3b1f3ad897a2eb524e645e34192b";
+var acc1 = "0xf71a914d2d108506ab4c66441964a894650b0c5b"; 
+var acc2 = "0x90d1155bf6b315f3abc7f01e149e3ed7d1bee421";
+var acc3 = "0x322fc04c646cc71707a997dc99f7732654449ba6";
+var pass = '123';
+
+
+var timestamp=new Date().getTime();
+console.log(timestamp);
+ var re = datetime(1554391942470);
+ alert(App.format(timestamp));
+ result_1 = web3.personal.unlockAccount(acc1,pass);
+// console.log(result_1);
+
+//  result = web3.eth.sendTransaction({from: web3.eth.accounts[0] , to: acc3, value: web3.toWei(200,"ether")});
+ // console.log(result);
+
+})();
+
+
+function datetime(time) {
+    var interval = new Date().getTime()-time;
+    //计算出相差天数
+    var returnTime= "";
+    //return Math.floor(interval/(3600*1000));
+    var days=Math.floor(interval/(24*3600*1000))
+    if(days==0)
+    {        
+        //计算出小时数
+        var leaveTime=interval%(24*3600*1000)    //计算天数后剩余的毫秒数
+        var hours=Math.floor(leaveTime/(3600*1000))
+        if(hours==0)
+        {
+            //计算相差分钟数
+            leaveTime=leaveTime%(3600*1000)        //计算小时数后剩余的毫秒数
+            var minutes=Math.floor(leaveTime/(60*1000))
+            if(minutes==0)
+            {
+                //计算相差秒数
+                leaveTime=leaveTime%(60*1000)      //计算分钟数后剩余的毫秒数
+                var seconds=Math.round(leaveTime/1000)                                    
+                return seconds+"秒前";
+            }
+            return minutes+"分钟前";
+        }
+        return hours+"小时前";
+
+    }
+    return days + "天前";
+}
+
+</script>
+</html>

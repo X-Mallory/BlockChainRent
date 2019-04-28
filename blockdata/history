@@ -1,0 +1,22 @@
+miner.statr()
+miner.start()
+miner.start(1)
+eth.getBalance(eth.account[0])
+eth.getBalance(eth.accounts[0])
+eth.getBalance(eth.accounts[1])
+eth.Accounts
+eth.Accounts()
+eth.getAccounts()
+miner.start()
+eth.account
+eth.accounts
+eth.getBalance(eth.accounts[0])
+eth.getBalance(eth.accounts[1])
+u1 = eth.account[0]
+u1 = eth.accounts[0]
+miner.start(1)
+miner.start()
+miner.stop()
+eth
+eth.getBlockNumber()
+eth.accounts

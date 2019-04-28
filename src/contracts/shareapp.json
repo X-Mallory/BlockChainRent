@@ -1,0 +1,281 @@
+[
+ {
+
+ 	"abi": [
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "datetamp",
+				"type": "uint256"
+			}
+		],
+		"name": "backObj",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "objID",
+				"type": "uint256"
+			}
+		],
+		"name": "objectIsRented",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getObjectsNumber",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "datetamp",
+				"type": "uint256"
+			},
+			{
+				"name": "intermediator",
+				"type": "address"
+			},
+			{
+				"name": "renter",
+				"type": "address"
+			}
+		],
+		"name": "rentObj",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "getObjectBy_id",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "name",
+				"type": "string"
+			}
+		],
+		"name": "getIdBy_name",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "getObjectRenter_Byid",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"name": "now_date",
+				"type": "uint256"
+			}
+		],
+		"name": "getRentTime",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "priceDaily",
+				"type": "uint256"
+			},
+			{
+				"name": "deposit",
+				"type": "uint256"
+			},
+			{
+				"name": "detail",
+				"type": "string"
+			},
+			{
+				"name": "addr",
+				"type": "string"
+			}
+		],
+		"name": "createObj",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "objID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "creator",
+				"type": "address"
+			}
+		],
+		"name": "NewObject",
+		"type": "event"
+	}
+],
+
+
+"address": "0x77fcd2eb0de289fdb035d1c47ea789f70786ec34"
+}
+]

@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a, img {
+	border: 0;
+}
+/*按钮样式*/
+#ClickMe {
+	width: 200px;
+	height: 30px;
+	border: 1px solid #C40000;
+	background-color: #000;
+	color: #FFF;
+	margin: 0 auto;
+}
+
+#goodcover {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.50;
+	filter: alpha(opacity = 80);
+	overflow-y: hidden;
+}
+
+#code {
+	width: 300px;
+	height: 400px;
+	background-color: #fff;
+	position: absolute;
+	display: none;
+	left: 45%;
+	z-index: 1002;
+}
+
+.close1 {
+	width: 300px;	
+	padding: 10px 10px 0px 10px;
+}
+
+#closebt {
+	float: right;
+}
+
+#closebt img {
+	width: 20px;
+}
+
+.goodtxt {
+	text-align: center;
+}
+
+.goodtxt p {
+	
+	line-height: 30px;
+	font-size: 16px;
+	color: #000;
+	font-weight: 600;
+}
+
+.code-img {
+	width: 250px;
+	margin: 30px auto 0 auto;
+	padding: 10px;
+}
+
+.code-img img {
+	width: 240px;
+}

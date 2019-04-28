@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>getMoney</title>
+    <meta charset="utf-8">
+    <meta name="Author" >
+  <!--   <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+  <link href="./css/share.css" rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css" href="css/component.css" />
+  <link rel="stylesheet" href="./css/message.css">
+  <link rel="stylesheet" href="./css/jumpmain.css" />
+
+
+</head>
+<body>
+
+    <h1 align="center" style="margin-top:30px;color:#686868" >区块链物品共享租用系统 </h1>
+<div class="wrap" style="height: 450px;">
+    <h2 align="center" style="margin-top:30px;color:#686868" >查询账户余额</h2>
+    <div  align="center" style="margin-top:30px;">
+       
+       <div align="center">
+             <span class="input input--haruki"  >
+                <input class="input__field input__field--haruki" type="text" id="address" />
+                <label class="input__label input__label--haruki" for="input-1">
+                    <span class="input__label-content input__label-content--haruki">输入账户地址:</span>
+                </label>
+             </span>
+        </div>
+
+         <div align="center"  class="comments"  style="margin-top:15px;">
+                <a href="#" onclick="App.getMoney()" class="myButton">查询余额</a>
+        </div>
+         
+        <div align="center" style="margin-top:20px;color:#686868;font-size:20px;">
+          <p style="display:inline;">账户地址：&nbsp&nbsp&nbsp</p>
+          <label id = "addr" ></label>
+        </div>
+        <div align="center" style="margin-top:10px;color:#686868;font-size:20px;">
+          <p style="display:inline;">余额（单位: wei）：&nbsp&nbsp&nbsp</p>
+          <label id = "money" ></label>
+        </div>
+         <div align="center" style="margin-top:10px;color:#686868;font-size:16px;">
+          <p style="display:inline;">注：&nbsp 1 ether= 1000000000000000000 Wei </p>
+          <label id = "money" ></label>
+        </div>
+    </div>
+
+</div>
+<div align="center"  class="comments" >
+                <a href="main.html" onclick="" class="myButton">返回主页</a>
+</div>
+
+    <div>
+<p align="center" style="color:#4F9D9D;margin-bottom: 20px ">Copyright ©2019 by Suguoyu. All Rights Reserved</p>
+
+</div>
+                    
+</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+<script src="js/app.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/message.js"></script>
+
+<script language="javascript" type="text/javascript" >
+
+  
+ App.initWeb3();
+ (function() {
+                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
+
+                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
+
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
+
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+
+</script>
+</html>

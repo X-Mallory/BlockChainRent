@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>welcome</title>
+    <meta charset="utf-8">
+    <meta name="Author" >
+  <!--   <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+  <link href="./css/share.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="css/zxf_page.css"/>
+  
+  <link rel="stylesheet" href="./css/message.css">
+  <link rel="stylesheet" href="./css/jumpmain.css" />
+
+
+</head>
+<body>
+
+    <h1 align="center" style="margin-top:30px;color:#686868" >区块链物品共享租用系统 </h1>
+<div class="wrap">
+
+    <div class="left">
+        <a href="#">
+            <img src="images/timg2.jpg" alt="">
+        </a>
+    </div>
+    <!-- 动态加载商品 -->
+   <div class="right" >
+     <ul id="goodsRow" >
+     <!--   
+        ....
+        .... 
+     -->
+    
+     </ul>
+    </div>
+
+    <!-- 加载的商品模板 -->
+     <div id="goodsTemplate" style="display: none;">
+     <li id="li" > 
+                <a class="img" href="#"><img src="images/timg.jpg" alt=""></a>
+                <a class="title" href="#">小米路由器3.0</a>
+                <span class="dec">四天线设计，更快更强</span>
+                <span class="price">149元</span>
+                <p id="aa" class="exemption">免邮费</p>
+                <div class="comments">
+                    <a href="#" onclick="App.Rent(this)" id="rent" class="myButton">租用</a>
+                   <a onclick="App.lookgoods(this)"  id="look" class="myButton">查看详情</a>
+                   <a onclick="App.Norent(2)"  id="back" class="myButton">不可归还</a>
+                </div>
+    </li>
+    </div>
+  
+   <!--  <div class="right">
+        <ul>
+            <li>
+                <a class="img" href="#"><img src="images/timg.jpg" alt=""></a>
+                <a class="title" href="#">小米路由器3.0</a>
+                <span class="dec">四天线设计，更快更强</span>
+                <span class="price">149元</span>
+                <p class="tip exemption">免邮费</p>
+                <div class="comments">
+                    <a href="#" class="myButton">租用</a>
+                   <a href="#" class="myButton">查看详情</a>
+                </div>
+            </li>
+
+            <li>
+                <a class="img" href="#"><img src="images/2.jpg" alt=""></a>
+                <a class="title" href="#">纸巾盒</a>
+                <span class="dec">木盖纸巾盒，采用优质PP材料制作，经久耐用</span>
+                <span class="price">27元</span>
+                <p class="tip donation">有赠品</p>
+                <div class="comments">
+                    <a href="#" class="myButton">租用</a>
+                   <a href="#" class="myButton">查看详情</a>
+                </div>
+            </li>
+
+            <li>
+                <a class="img" href="#"><img src="images/33.jpg" alt=""></a>
+                <a class="title" href="#">文艺花瓶</a>
+                <span class="dec">文艺花瓶系列——束馨</span>
+                <span class="price">29.9元</span>
+                <p class="tip exemption">免邮费</p>
+                <div class="comments">
+                    <a href="#" class="myButton">租用</a>
+                   <a href="#" class="myButton">查看详情</a>
+                </div>
+            </li>
+            <li>
+                <a class="img" href="#"><img src="images/4.jpg" alt=""></a>
+                <a class="title" href="#">小米扫地机器人</a>
+                <span class="dec">智商高，扫得干净扫得快</span>
+                <span class="price">1449元</span>
+                <p class="tip exemption">免邮费</p>
+                <div class="comments">
+                    <a href="#" class="myButton">租用</a>
+                   <a href="#" class="myButton">查看详情</a>
+                </div>
+            </li>
+            <li>
+                <a class="img" href="#"><img src="images/5.jpg" alt=""></a>
+                <a class="title" href="#">小米充电宝</a>
+                <span class="dec">充电，更快更强</span>
+                <span class="price">100元</span>
+                <p class="tip new_product">新品</p>
+               <div class="comments">
+                    <a href="#" class="myButton">租用</a>
+                   <a href="#" class="myButton">查看详情</a>
+                </div>
+            </li>
+            <li>
+                <a class="img" href="#"><img src="images/6.jpg" alt=""></a>
+                <a class="title" href="#">九号平衡车</a>
+                <span class="dec">年轻人的酷玩具，骑行遥控两种玩法</span>
+                <span class="price">1999元</span>
+                <p class="tip exemption">免邮费</p>
+                <div class="comments">
+                    <a href="#" class="myButton">租用</a>
+                   <a href="#" class="myButton">查看详情</a>
+                </div>
+            </li>
+            <li>
+                <a class="img" href="#"><img src="images/7.jpg" alt=""></a>
+                <a class="title" href="#">小米路由器4c</a>
+                <span class="dec">四天线设计，更快更强</span>
+                <span class="price">149元</span>
+                <p class="tip donation">有赠品</p>
+               <div class="comments">
+                    <a href="#" class="myButton">租用</a>
+                   <a href="#" class="myButton">查看详情</a>
+                </div>
+ 
+            </li>
+            <li>
+                <a class="img" href="#"><img src="images/8.jpg" alt=""></a>
+                <a class="title" href="#">TIMESS闹钟</a>
+                <span class="dec">声控可充电LED学生创意</span>
+                <span class="price">119元</span>
+                <p class="tip new_product">新品</p>
+                <div class="comments">
+                    <a href="#" class="myButton">租用</a>
+                    <a href="#" class="myButton">查看详情</a>
+                </div>
+            </li>
+         
+
+
+
+ 
+        </ul> 
+    </div>-->
+</div>
+
+ <div  align="center" > <a href="CreatGoods.html" onclick="" id="creat" class="myButton">创建自己的物品</a></div>
+<div class="zxf_pagediv"></div>
+
+<div>
+<p align="center" style="color:#4F9D9D;margin-bottom: 20px ">Copyright ©2019 by Suguoyu. All Rights Reserved</p>
+
+</div>
+</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/zxf_page.js"></script>
+    <script src="js/message.js"></script>
+
+<script language="javascript" type="text/javascript" >
+window.onload=function(){
+  
+    
+  App.init();
+
+};
+
+</script>
+</html>

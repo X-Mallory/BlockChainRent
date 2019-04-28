@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="Author" >
+  <!--   <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+  <link href="./css/share.css" rel="stylesheet" type="text/css"/>
+   <link rel="stylesheet" type="text/css" href="css/component.css" />
+  <link rel="stylesheet" href="./css/message.css">
+  <link rel="stylesheet" href="./css/jumpmain.css" />
+
+
+</head>
+<body>
+
+    <h1 align="center" style="margin-top:30px;color:#686868" >区块链物品共享租用系统 </h1>
+<div class="wrap" style="height: 550px;">
+    <h2 align="center" style="margin-top:30px;color:#686868" >注册区块链账号</h2>
+    <div  align="center" style="margin-top:30px;">
+       
+       <div align="center">
+             <span class="input input--haruki"  >
+                <input class="input__field input__field--haruki" type="password" id="password_1" />
+                <label class="input__label input__label--haruki" for="input-1">
+                    <span class="input__label-content input__label-content--haruki">输入申请账号的密码:</span>
+                </label>
+             </span>
+        </div>
+
+        <div align="center">
+             <span class="input input--haruki"  >
+                <input class="input__field input__field--haruki" type="password"" id="password_2" />
+                <label class="input__label input__label--haruki" for="input-1">
+                    <span class="input__label-content input__label-content--haruki">确认密码:</span>
+                </label>
+             </span>
+        </div>
+
+         <div align="center"  class="comments"  style="margin-top:15px;">
+                <a href="#" onclick="registerAccount()" class="myButton">申请账号</a>
+        </div>
+         
+        <div align="center" style="margin-top:20px;color:#686868;font-size:20px;">
+          <p style="display:inline;">申请的账户地址为：&nbsp&nbsp&nbsp</p>
+          <label id = "addr" ></label>
+        </div>
+        <div align="center" style="margin-top:10px;color:#686868;font-size:20px;">
+          <p style="display:inline;">账户密码：&nbsp&nbsp&nbsp</p>
+          <label id = "pass" ></label>
+        </div>
+         <div align="center" style="margin-top:10px;color:#686868;font-size:16px;">
+          
+          <label id = "tishi" ></label>
+        </div>
+    </div>
+
+</div>
+<div align="center"  class="comments" >
+                <a href="main.html" onclick="" class="myButton">返回主页</a>
+</div>
+
+    <div>
+<p align="center" style="color:#4F9D9D;margin-bottom: 20px; margin-top: 10px; ">Copyright ©2019 by Suguoyu. All Rights Reserved</p>
+
+</div>
+                    
+</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+<script src="js/app.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/message.js"></script>
+
+<script language="javascript" type="text/javascript" >
+
+  
+ App.initWeb3();
+ function registerAccount(){
+
+//首先获取密码值
+
+var pass_1 = $('#password_1').val();
+
+var pass_2 = $('#password_2').val();
+
+if(pass_1 != pass_2){
+
+  $.message({
+        message:'两次输入的密码不一致!',
+        type:'error'
+    });
+    return ;
+}
+
+ // Is there an injected web3 instance?
+    if (typeof web3 !== 'undefined') {
+      App.web3Provider = web3.currentProvider;
+    } else {
+      // If no injected web3 instance is detected, fall back to Ganache
+      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+    }
+    web3 = new Web3(App.web3Provider);
+     //先使用第一个默认账户
+    web3.eth.defaultAccount = web3.eth.accounts[0];
+    console.log("gasPrice(wei):",web3.eth.gasPrice.toString());
+    App.defaultAccount =  web3.eth.defaultAccount;
+
+     acct = web3.personal.newAccount(pass_2);
+     //acct = "0x6f7fcc6089ba6cf9e52e5c76422746d7120bce4b";
+     
+     $("#addr").text(acct);
+     $("#pass").text("********");
+     $("#tishi").text("注：该账户的私钥文件已经位于当前路径Blockdata下的Keystore文件夹中");
+
+
+ };
+ (function() {
+                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
+
+                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
+
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
+
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+
+</script>
+</html>

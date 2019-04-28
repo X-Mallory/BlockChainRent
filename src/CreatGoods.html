@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>creat</title>
+    <meta charset="utf-8">
+    <meta name="Author" >
+  <!--   <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> -->
+  <link href="./css/share.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="css/component.css" />
+
+  <link rel="stylesheet" href="./css/message.css">
+  <link rel="stylesheet" href="./css/jumpmain.css" />
+ 
+</head>
+<body>
+
+    <h1 align="center" style="margin-top:30px;color:#686868" >区块链物品共享租用系统</h1>
+<div class="wrap" style="height: 850px;">
+
+    <div class="left" >
+        <a href="#">
+            <img src="images/timg1.jpg" alt="">
+        </a>
+    </div>
+    <div class="right">
+        <h2 align="center" style="margin-top:30px;color:#686868" >输入商品信息完成创建</h2>
+        <ul style="">
+               <div align="center">
+
+                <span class="input input--haruki"  >
+                    <input class="input__field input__field--haruki" type="text" id="address" />
+                    <label class="input__label input__label--haruki" for="input-1">
+                        <span class="input__label-content input__label-content--haruki">租户地址:</span>
+                    </label>
+                </span>
+               </div>
+
+               <div align="center">
+               <span class="input input--haruki"  >
+                    <input class="input__field input__field--haruki" type="text" id="name" />
+                    <label class="input__label input__label--haruki" for="input-1">
+                        <span class="input__label-content input__label-content--haruki">商品名称:</span>
+                    </label>
+                </span>
+                </div>
+
+                <div align="center">
+                <span class="input input--haruki"  >
+                    <input class="input__field input__field--haruki" type="text" id="money" />
+                    <label class="input__label input__label--haruki" for="input-1">
+                        <span class="input__label-content input__label-content--haruki">押金/每日租金 :wei（/号分隔）:</span>
+                    </label>
+                </span>
+                </div>
+
+                 <div align="center">
+                <span class="input input--haruki"  >
+                    <input class="input__field input__field--haruki" type="text" id="g_content" />
+                    <label class="input__label input__label--haruki" for="input-1">
+                        <span class="input__label-content input__label-content--haruki">商品描述:</span>
+                    </label>
+                </span>
+                </div>
+
+                <div align="center">
+               <span class="input input--haruki"  >
+                    <input class="input__field input__field--haruki" type="text" id="picture" />
+                    <label class="input__label input__label--haruki" for="input-1">
+                        <span class="input__label-content input__label-content--haruki">商品图片:</span>
+                    </label>
+                </span>
+                </div>
+                
+                <div align="center">
+               <span class="input input--haruki"  >
+                    <input class="input__field input__field--haruki" type="password" id="pass" />
+                    <label class="input__label input__label--haruki" for="input-1">
+                        <span class="input__label-content input__label-content--haruki">输入账户密码:</span>
+                    </label>
+                </span>
+                </div>
+        </ul>
+
+        <div align="center" style="margin-top:20px; color:#686868;font-size:16px;">
+        <p style="display:inline;">注意：创建物品需要消耗一定的费用</p>
+        <p style="display:inline;">将从创建者的账户中扣除，大概300000 gas。</p>
+        </div>
+
+        <div align="center"  class="comments"  style="margin-top:15px;">
+                    <a href="#" onclick="App.creat()" class="myButton">创建</a>
+                    <a href="main.html" class="myButton">取消创建</a>
+        </div>
+
+    </div>
+</div>
+
+<div>
+<p align="center" style="color:#4F9D9D;margin-bottom: 20px ">Copyright ©2019 by Suguoyu. All Rights Reserved</p>
+
+</div>
+
+</body>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+<script src="js/app.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/message.js"></script>
+
+<script>
+    App.initWeb3();
+            (function() {
+                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
+
+                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
+
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
+
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+        </script>
+</html>
